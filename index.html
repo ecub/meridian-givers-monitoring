@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meridian Givers Monitoring</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+            <a href="https://meridian.wtf" class="logo" alt="Meridian"></a>
+            <div class="links">
+            <a class="link" href="https://t.me/meridian_wtf" target="_blank">Telegram</a><span>•</span><a class="link" href="https://x.com/meridianwtf" target="_blank">Twitter</a>
+            </div>
+            </div>
+
+            <div class="progress-bars">
+                <div class="progress-bar" id="totalMiningContainer">
+                    <label for="totalMiningProgress"></label>
+                    <label for="miningProgress"></label>
+                    <progress
+                        id="totalMiningProgress"
+                        value="0"
+                        max="420000000000000000"
+                    ></progress>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.givers = [
+                'EQAr5cz1Ovu7PJy4s8C9akci2L55L5HdnNdFVNenocLmfclE',
+                'EQAAxDtuPj4Af0dFQ0ycUCsVMO_adL5BaDNiM2gk-Em1XSTj',
+                'EQClSB5fNMyJ3uy-uJzE7IPPqkV9AbiNnC8wadZf3XA16MjX',
+                'EQB109HtTqFmU6_-M6XaM3jykK5erDz3p49pCiZgAJHxjCkb',
+                'EQBxfbj4mPtRwkEWduy7wOb6VI8bELVvJBaddlxP_S4J87D9',
+                'EQAtGsRfQNulCpifX85tFNVF7BJgF3Sz2zTFfQ8zSZZ00uGT',
+                'EQDC733GMW1Z9Svx25zSxyTpwrAiH7pAjAS8ZcN-Fdj2ICYu',
+                'EQDx7zJjx42ll1aPNNzAI0gmqKs5NwCMjyxFMoc7TUVZ3oGV',
+                'EQB6SQ75l7_4xPPqD-MhytZUuNLSiObGpv27f1bPznAG-36k',
+                'EQC0wy0bM9EkLAJAKOzfVWlMuxJcuqDhUQKNii8b1mI-rskf',
+            ].reverse();
+            window.loadTime = Date.now();
+            window.giversInitialBalances = Array(40).fill(null);
+            window.maxBalances = [
+                23000000000000000, 8400000000000000, 6300000000000000,
+                4200000000000000,
+            ];
+            window.solutionRewards = [
+                100000000000, 1000000000000, 10000000000000, 100000000000000,
+            ];
+
+            function createProgressBar(category, index, maxBalance) {
+                // Create the container div for the progress bar
+                var progressBarContainer = document.createElement('div');
+                progressBarContainer.className = 'progress-bar';
+
+                // Create the anchor element
+                var anchor = document.createElement('a');
+                anchor.href = 'https://tonviewer.com/' + givers[index - 1];
+                anchor.className = 'elegant-link'; // Apply the class to the anchor
+                anchor.target = '_blank'; // Open in new tab
+
+                // Create the label
+                var label = document.createElement('label');
+                label.htmlFor = category + index;
+                label.textContent =
+                    category + ' #' + (index % 10 === 0 ? 10 : index % 10);
+
+                // Create the progress element
+                var progress = document.createElement('progress');
+                progress.id = 'giver' + index;
+                progress.value = maxBalance; // Placeholder value
+                progress.max = maxBalance;
+
+                // Append label to anchor, and anchor to the container
+                anchor.appendChild(label);
+                progressBarContainer.appendChild(anchor);
+                progressBarContainer.appendChild(progress);
+
+                return progressBarContainer;
+            }
+
+            function addProgressBars() {
+                var categories = ['Giver'];
+                var container = document.querySelector('.progress-bars');
+                let totalI = 1;
+                categories.forEach((category) => {
+                    for (let i = 1; i <= 10; i++, totalI++) {
+                        container.appendChild(
+                            createProgressBar(
+                                category,
+                                totalI,
+                                maxBalances[categories.indexOf(category)]
+                            )
+                        );
+                    }
+                });
+            }
+
+            addProgressBars();
+        </script>
+              <p class="byline">
+                Created by&nbsp;<a href="https://gusarich.com" target="_blank">Gusarich</a>. Fixed by&nbsp;<a href="https://t.me/illustrator" target="_blank">Jenya</a>
+            </p>
+        <script src="dist/main.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

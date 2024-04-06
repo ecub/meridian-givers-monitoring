@@ -1,0 +1,160 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #FDF6E0;
+    font-size: 14px;
+    background: #222425; /* Optional: added a light background */
+}
+a {
+    color:#93BBBC; /* A nice shade of blue for the text */
+    text-decoration: none; /* Removes the underline from links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex; /* Using flex to center children */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    min-height: 100vh; /* Minimum height of viewport */
+    margin: 0 auto; /* Centering container */
+    padding: 16px;
+    max-width: 720px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 8px;
+}
+.link {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 16px;
+}
+.links span {
+    padding: 0 16px;
+    line-height: 16px;
+    opacity: 0.5;
+}
+.logo {
+background: url(logo.png);
+background-size: 32px 32px;
+width: 32px;
+height: 32px;
+}
+.byline {
+    margin: 24px; /* Spacing between byline and progress bars */
+    color: #FDF6E0; /* Adjust text color as needed */
+    justify-content: center;
+    display: flex;
+}
+
+.byline a {
+    color: #93BBBC; /* Adjust link color as needed */
+    text-decoration: none; /* No underline */
+}
+
+.byline a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.progress-bars {
+    width: 100%; /* Full width of the container */
+}
+
+.progress-bar {
+    width: auto; /* Adjust width of progress bars */
+    margin: 16px auto; /* Adding a 10px margin around each progress bar */
+    background: #343534;
+    padding: 16px;
+    border-radius: 16px;
+}
+.progress-bar:nth-child(1){
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 24px;
+  }
+  .progress-bar label {
+    margin-top: 24px;
+
+  }
+      .progress-bar label:nth-child(2) {
+                   font-weight: 700;
+                   font-size: 20px;
+                   margin-top: 24px;
+                   margin-bottom: 16px;
+                   text-align: center;
+          }
+    .progress-bar label:nth-child(1) {
+      background-color: #343534;
+      padding: 8px 12px;
+      border-radius: 32px;
+      text-align: center;
+     margin: 0;
+  }
+  .progress-bar:nth-child(1) {
+    margin: 0;
+  }
+  #totalMiningProgress {
+    max-width: 160px;
+    margin-top: 0;
+  }
+
+
+progress {
+    width: 100%; /* Full width of the progress-bar container */
+    height: 12px; /* Adjust height as needed */
+    background: transparent;
+    margin-top: 12px;
+    border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #93BBBC; /* Цвет заполненной части (для WebKit браузеров) */
+      border-radius: 6px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #93BBBC; /* Цвет заполненной части (для Mozilla Firefox) */
+  border-radius: 6px;
+}
+
+/* Незаполненная часть */
+progress::-webkit-progress-bar {
+  background-color: #545450; /* Цвет незаполненной части (для WebKit браузеров) */
+  border-radius: 6px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #545450; /* Цвет незаполненной части (для Mozilla Firefox) */
+  border-radius: 6px;
+}
+
+label {
+    display: block;
+    text-align: left; /* Align text to the left */
+}
+
+#totalMiningContainer {
+    margin: 32px auto;
+}
+.elegant-link {
+    color:#FDF6E0; /* A nice shade of blue for the text */
+    text-decoration: none; /* Removes the underline from links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+.elegant-link:hover {
+    text-decoration: underline; /* Underline on hover *
+}
