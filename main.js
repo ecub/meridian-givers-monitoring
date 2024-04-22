@@ -97,8 +97,8 @@ async function main() {
         // Update the total mining progress bar
         updateTotalMiningProgress(totalBalance);
 
-        // Wait for 10 seconds before starting the next iteration
-        await new Promise((resolve) => setTimeout(resolve, 5000));
+        // Wait for 20 seconds before starting the next iteration
+        await new Promise((resolve) => setTimeout(resolve, 20000));
     }
 }
 
